@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 02:02:20 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/07/03 18:03:49 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/09/12 23:51:42 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	main()
 {
-	std::string a = "\n";
+	ScalarConverter::convert("-4f");
 	
-	std::cout << a.length() << std::endl;
 }

@@ -6,14 +6,14 @@
 #    By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 02:44:06 by tfiguero          #+#    #+#              #
-#    Updated: 2024/06/23 01:50:23 by tfiguero         ###   ########.fr        #
+#    Updated: 2024/09/12 20:53:30 by tfiguero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Burocracy
+NAME = Scalar
 
 SRC_FILES = main.cpp\
-	    ScalarConverter.cpp\
+			ScalarConverter.cpp\
 			
 			
 OBJ_DIR = objs/
