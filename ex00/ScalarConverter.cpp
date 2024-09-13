@@ -6,14 +6,31 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 02:02:08 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/09/12 23:57:02 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/09/13 19:22:54 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
+ScalarConverter::ScalarConverter()
+{}
+
+ScalarConverter::~ScalarConverter()
+{}
+ScalarConverter::ScalarConverter(const ScalarConverter& old)
+{
+	(void)old;
+}
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter&old)
+{
+	(void)old;
+	return *this;
+}
+
 void ScalarConverter::treat_special(std::string param, int aux)
 {
+	std::cout << "SOY ESPECIAAAAAAAAAAAAAAAAAAAAL" << std::endl;
+	
 	std::cout << "Char: impossible" << std::endl;
 	std::cout << "Int: impossible" << std::endl;
 	if (!aux)
@@ -31,6 +48,8 @@ void ScalarConverter::treat_special(std::string param, int aux)
 }
 void ScalarConverter::treat_double(std::string param)
 {
+	std::cout << "SOY DOOOOOOOOOOOOUBLEEEE" << std::endl;
+	
 	double dparam;
 	
 	dparam = strtod(param.c_str(), NULL);
@@ -57,6 +76,8 @@ void ScalarConverter::treat_double(std::string param)
 }
 void ScalarConverter::treat_float(std::string param)
 {
+	std::cout << "SOY FFFFFFFFFFFFFFFLOAAAAAAAAT" << std::endl;
+	
 	float fparam = strtof(param.c_str(), NULL);
 	if(fparam >= 0 && fparam <= 127)
 	{
@@ -81,6 +102,8 @@ void ScalarConverter::treat_float(std::string param)
 }
 void ScalarConverter::treat_int(std::string param)
 {
+	std::cout << "SOY IIIIIIIIINT" << std::endl;
+	
 	int iparam = atoi(param.c_str());
 	if(iparam >= 0 && iparam <= 127)
 	{
@@ -100,6 +123,7 @@ void ScalarConverter::treat_char(std::string param)
 {
 	char c;
 	
+	std::cout << "SOY CHAAAAAAAAR" << std::endl;
 	c = static_cast<char> (param.at(0));
 	std::cout << "Char: '" << c << "'" << std::endl;
 	std::cout << "Int: '" << static_cast<int>(c) << "'" << std::endl;
@@ -129,13 +153,11 @@ static int ft_isnum(std::string param)
 		}
 		i++;
 	}
-	bool a = (i == param.length()-1);
-	std::cout <<  a << std::endl;
 	if (ret == 0)
 	{
 		if(i > 1 && i == param.length()-1 && param.at(i) == 'f')
 			ret = 1;
-		if (point_counter == 1)
+		else if (point_counter == 1)
 			ret = 1;
 		else
 			ret = 0;
@@ -158,7 +180,7 @@ void ScalarConverter::convert(std::string param)
 		treat_int(param);
 	else if(is_num && param.find('f') == std::string::npos && param.find('.') != std::string::npos)
 		treat_double(param);
-	else if(is_num && param.find('f') != std::string::npos && param.find('.') != std::string::npos)
+	else if(is_num && param.find('f') != std::string::npos)
 		treat_float(param);
 	else if(!param.compare("-inf") || !param.compare("+inf")|| !param.compare("nan"))
 		treat_special(param, 0);

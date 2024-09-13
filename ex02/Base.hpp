@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/23 02:02:20 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/09/13 17:54:40 by tfiguero         ###   ########.fr       */
+/*   Created: 2024/09/13 22:04:54 by tfiguero          #+#    #+#             */
+/*   Updated: 2024/09/14 00:22:34 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "ScalarConverter.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int	main()
+#include <iostream>
+#include <cstdlib>
+
+class Base
 {
-	ScalarConverter::convert("-4.f");
-	ScalarConverter::convert("-4.");
-	ScalarConverter::convert("-40000");
-	ScalarConverter::convert("*");
-	ScalarConverter::convert("-inff");
-}
+	public:
+		virtual ~Base();
+		
+		Base * generate(void);
+		void identify(Base* p);
+		void identify(Base& p);
+};
+
+
+#endif

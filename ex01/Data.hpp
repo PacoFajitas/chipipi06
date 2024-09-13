@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/23 02:02:20 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/09/13 17:54:40 by tfiguero         ###   ########.fr       */
+/*   Created: 2024/09/13 19:53:34 by tfiguero          #+#    #+#             */
+/*   Updated: 2024/09/13 19:53:36 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "ScalarConverter.hpp"
+#ifndef DATA_HPP
+# define DATA_HPP
 
-int	main()
+typedef struct Data
 {
-	ScalarConverter::convert("-4.f");
-	ScalarConverter::convert("-4.");
-	ScalarConverter::convert("-40000");
-	ScalarConverter::convert("*");
-	ScalarConverter::convert("-inff");
-}
+	int	a;
+	float b;
+	char c[5];
+} s_data;
+
+
+#endif

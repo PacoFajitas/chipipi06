@@ -6,7 +6,7 @@
 /*   By: tfiguero < tfiguero@student.42barcelona    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 02:02:10 by tfiguero          #+#    #+#             */
-/*   Updated: 2024/09/12 23:20:30 by tfiguero         ###   ########.fr       */
+/*   Updated: 2024/09/13 19:20:16 by tfiguero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ class ScalarConverter
 	public:
 		static void convert(std::string param);
 	private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter &old);
+		ScalarConverter& operator=(const ScalarConverter& old);
+		~ScalarConverter();
 		static void treat_special(std::string param, int aux);
 		static void treat_double(std::string param);
 		static void treat_float(std::string param);
